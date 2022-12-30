@@ -14,10 +14,19 @@ public class CardService {
     @Autowired
     CardRepository cardRepository3;
 
-    public Card createAndReturn(Student student){
+    public Card createAndReturn(Student student) {
         Card card = null;
-        //link student with a new card
+        if (student != null) {
+            // Create a new card and link it to the student
+            card = new Card();
+            card.setStudent(student);
+
+            // Save the card to the database
+            card = cardRepository3.save(card);
+        }
+        // Return the newly created card
         return card;
+
     }
 
     public void deactivateCard(int student_id){

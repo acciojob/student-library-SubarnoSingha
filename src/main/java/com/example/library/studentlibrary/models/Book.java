@@ -40,5 +40,13 @@ public class Book {
 
     public Book() {
     }
+
+    public boolean isAvailable() {
+        return true;
+    }
+
+    public void setAvailable(boolean b) {
+
+    }
 }
 

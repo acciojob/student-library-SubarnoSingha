@@ -14,5 +14,10 @@ public class AuthorService {
 
     public void create(Author author){
 
+            if (author != null && author.getName() != null && !author.getName().isEmpty()) {
+                // Save the author to the database
+                authorRepository1.save(author);
+            }
+
     }
 }
